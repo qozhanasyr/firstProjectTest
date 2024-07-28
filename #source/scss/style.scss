@@ -1,0 +1,407 @@
+@font-face {
+    font-family: 'Oswald';
+    src: url('../fonts/Oswald-SemiBold.eot');
+    src: url('../fonts/Oswald-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Oswald-SemiBold.woff2') format('woff2'),
+        url('../fonts/Oswald-SemiBold.woff') format('woff'),
+        url('../fonts/Oswald-SemiBold.ttf') format('truetype'),
+        url('../fonts/Oswald-SemiBold.svg#Oswald-SemiBold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Oswald';
+    src: url('../fonts/Oswald-Medium.eot');
+    src: url('../fonts/Oswald-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Oswald-Medium.woff2') format('woff2'),
+        url('../fonts/Oswald-Medium.woff') format('woff'),
+        url('../fonts/Oswald-Medium.ttf') format('truetype'),
+        url('../fonts/Oswald-Medium.svg#Oswald-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Krub';
+    src: url('../fonts/Krub-Bold.eot');
+    src: url('../fonts/Krub-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Krub-Bold.woff2') format('woff2'),
+        url('../fonts/Krub-Bold.woff') format('woff'),
+        url('../fonts/Krub-Bold.ttf') format('truetype'),
+        url('../fonts/Krub-Bold.svg#../fonts/Krub-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Krub';
+    src: url('../fonts/Krub-Regular.eot');
+    src: url('../fonts/Krub-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Krub-Regular.woff2') format('woff2'),
+        url('../fonts/Krub-Regular.woff') format('woff'),
+        url('../fonts/Krub-Regular.ttf') format('truetype'),
+        url('../fonts/Krub-Regular.svg#../fonts/Krub-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Krub';
+    src: url('../fonts/Krub-SemiBold.eot');
+    src: url('../fonts/Krub-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Krub-SemiBold.woff2') format('woff2'),
+        url('../fonts/Krub-SemiBold.woff') format('woff'),
+        url('../fonts/Krub-SemiBold.ttf') format('truetype'),
+        url('../fonts/Krub-SemiBold.svg#Krub-SemiBold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+$mycolorPurple: #a460f9;
+$mycolorDark: #181818;
+
+@import "style_null.scss";
+
+body{
+    background: $mycolorDark;
+    position: relative;
+    & .wrapper{
+        overflow-x: hidden;
+        position: relative;
+        min-height: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+        display: grid;
+        color: #ffffff;
+        grid-template: 
+                [start] "header" 120px [row2]
+                [row2] "main" 1fr [row3]
+                [row3] "footer" 520px [row-end] / minmax(100%, 1fr);
+    }
+    & .header{
+        padding: 15px;
+        grid-area: header;
+        font-family: Oswald;
+        font-weight: 600;
+        font-size: 1.2em;
+        display: grid;
+        grid-template: 1fr / minmax(auto, 300px) auto minmax(auto, 900px);
+        align-items: center;
+        text-transform: uppercase;
+
+        & .header__logo{
+            grid-column: 1 / 2;
+            font-size: 1.3em;
+        }
+        & .header__menu{
+            grid-column: 3 / 4;
+            & .header__list{
+                display: grid;
+                grid-auto-flow: column;
+                justify-items: end;
+                & a{color: #ffffff; padding: 6px 14px;}
+                & li:last-child a{
+                    color: $mycolorDark;
+                    background: #ffffff;
+                }
+            }
+            & .menu_bar{
+                display: none;
+            }
+            
+        }
+        @media (max-width: 1050px){
+                & .header__menu{
+                    display: grid;
+                    justify-items: end;
+                }
+                & .header__menu .header__list{
+                    display: none;
+                }
+                & .header__menu .menu_bar{
+                    width: 40px;
+                    display: block;
+                }
+        }
+    }
+    & .main{
+        padding: 15px;
+        grid-area: main;
+
+        & .beginners{
+            display: grid;
+            grid-template: 1fr / 1fr 1fr 1fr;
+        
+            & .beginners__item_1{
+                grid-column: 1 / 2;
+                position: relative;
+                & .ui{
+                    font-size: 9em; font-family: 'Krub'; 
+                    font-weight: bold; margin: -8px; 
+                    display: inline-block; margin-top: 90px;
+                    & span{
+                        color: $mycolorPurple;
+                        height: 20px;
+                        width: 22px;
+                    }
+                }
+                & .bgn{
+                    font-family: 'Krub'; font-weight: normal;
+                    transform-origin: left top; transform: rotate(-90deg);
+                    font-size: 3.2em; margin-top: 290px;
+                    & span{font-weight: bold;}
+                }
+                & .bec{
+                    font-family: 'Krub'; font-weight: bold;
+                    text-transform: uppercase; line-height: 26px;
+                    padding-left: 24px; position: relative; transform: translate(46%, -170px);
+                    &:before{
+                        content:'';
+                        width: 12px;
+                        height: 12px;
+                        background: #ffffff;
+                        position: absolute;
+                        top: 10px;
+                        left: 0;
+                    }
+                }
+            }
+            @media (max-width: 1050px){
+                & .beginners__item_1 .bec{
+                    display: none;
+                }
+            }
+            @media (max-width: 840px){
+                & .beginners__item_1 .bec{
+                    display: none;
+                }
+                & .beginners__item_1 .ui{
+                    font-size: 7em;
+                }
+            }
+            & .beginners__item_2{
+                grid-column: 2 / 3;
+                display: flex;
+                justify-content: center;
+                position: relative;
+                & .circle{
+                    margin: 160px 20px;
+                    width: 400px;
+                    height: 400px;
+                    border-radius: 50%;
+                    background: $mycolorPurple;
+                }
+                & .person{
+                    z-index: 2;
+                    position: absolute;
+                    & img{
+                        height: 100%;
+                    }
+                }
+            }
+
+            & .beginners__item_3{
+                grid-column: 3 / 4;
+                margin-top: 80px;
+                & .edtn{
+                    font-family: 'Krub'; font-weight: bold; text-transform: uppercase;
+                    border: 2px solid #ffffff; position: relative; letter-spacing: 0.3em;
+                    padding: 16px 30px 20px; position: absolute; right: -100px;
+                    & span{
+                        line-height: 32px;
+                        display: inline-block;
+                        width: 100%;
+                        font-size: 1.2em;
+                        &:last-child{
+                            font-size: 2.5em;
+                        }
+                    }
+                }
+                & .guide{
+                    margin-top: 180px;
+                    max-width: 300px;
+                    & span{
+                        text-align: justify;
+                        display: block;
+                        font-family: "Krub";
+                        font-weight: 600;
+                        margin-bottom: 40px;
+                        line-height: 26px;
+                    }
+                     & span:first-child{
+                        font-size: 1.35em;
+                        font-family: 'Krub';
+                        display: block;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        letter-spacing: 0.1em;
+                        margin-bottom: 20px;
+                    }
+                    & .footer span{
+                        font-size: 1.2em;
+                        font-family: 'Oswald';
+                        display: inline-block;
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        margin-bottom: 20px;
+                        background: $mycolorPurple;
+                        padding: 12px 20px;
+                    }
+                    & .footer span:last-child{
+                        background: none;
+
+                    }
+                }
+            }
+            @media (max-width: 840px){
+                & .beginners__item_3 .guide .text{
+                    display: none;
+                }
+                & .beginners__item_3 .guide .footer{
+                    margin: 30px;
+                }
+            }
+            & .skill{
+                top: 780px;
+                left: 0;
+                z-index: 2;
+                background: $mycolorDark;
+                display: grid;
+                position: absolute;
+                width: 100%;
+                height: 150px;
+                grid-template: 1fr / 1fr 1fr 1fr;
+                grid-auto-flow: column;
+                & .skill_item{
+                    font-family: 'Oswald';
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: row;
+                    font-size: 3.5em;
+                    & .num span{
+                        color: $mycolorPurple;
+                    }
+                    & .text{
+                        margin-left: 12px;
+                        font-size: 0.5em;
+                        display: flemex;
+                        flex-direction: column;
+                        font-family: 'Krub';
+                        & span{
+                            display: block;
+                            font-weight: bold;
+                            &:first-child{
+                                font-weight: normal;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+        @media (max-width: 1050px) {
+            & .beginners{
+                grid-template: 1fr / 15% 1fr 30%;
+            }
+        }
+        @media (max-width: 759px) {
+            & .beginners{
+                grid-template: 1fr / 1% 1fr 30%;
+            }
+            & .beginners .beginners__item_1{
+                & .ui{
+                    font-size: 5em; font-family: 'Krub'; 
+                    font-weight: bold; margin: -8px; 
+                    display: inline-block; margin-top: 50px;
+                    & span{
+                        color: $mycolorPurple;
+                        height: 20px;
+                        width: 22px;
+                    }
+                }
+                & .bgn{
+                    font-family: 'Krub'; font-weight: normal;
+                    transform-origin: left top; transform: rotate(-90deg);
+                    font-size: 2em; margin-top: 210px;
+                    & span{font-weight: bold;}
+                }
+            }
+            & .beginners .beginners__item_2{
+                grid-column: 2 / 3;
+                display: flex;
+                justify-content: center;
+                position: relative;
+                & .circle{
+                    margin: 100px 20px;
+                    width: 230px;
+                    height: 230px;
+                    border-radius: 50%;
+                    background: $mycolorPurple;
+                }
+                & .person{
+                    z-index: 2;
+                    position: absolute;
+                    height: 100%;
+                }
+            }
+            & .beginners .skill{
+                top: 490px;
+                left: 0;
+                z-index: 2;
+                background: $mycolorDark;
+                display: grid;
+                position: absolute;
+                width: 100%;
+                height: 150px;
+                grid-template: 1fr / 1fr 1fr 1fr;
+                grid-auto-flow: column;
+                & .skill_item{
+                    font-family: 'Oswald';
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: row;
+                    font-size: 3.5em;
+                    & .num span{
+                        color: $mycolorPurple;
+                    }
+                    & .text{
+                        margin-left: 12px;
+                        font-size: 0.5em;
+                        display: flemex;
+                        flex-direction: column;
+                        font-family: 'Krub';
+                        & span{
+                            display: block;
+                            font-weight: bold;
+                            &:first-child{
+                                font-weight: normal;
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+        & .shadow{
+            background: $mycolorDark;
+            width: 1400px;
+            margin: -74px auto 0;
+            height: 150px;
+            box-shadow: 0px 0px 16px 6px rgba(0,0,0,0.5);
+        }
+        @media (max-width: 759px){
+
+        }
+    }
+    & .footer{
+        grid-area: footer;
+    }
+}

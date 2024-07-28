@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Krub';
+    src: url('Krub-SemiBold.eot');
+    src: url('Krub-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('Krub-SemiBold.woff2') format('woff2'),
+        url('Krub-SemiBold.woff') format('woff'),
+        url('Krub-SemiBold.ttf') format('truetype'),
+        url('Krub-SemiBold.svg#Krub-SemiBold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+

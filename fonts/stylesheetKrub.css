@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Krub';
+    src: url('Krub-Bold.eot');
+    src: url('Krub-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Krub-Bold.woff2') format('woff2'),
+        url('Krub-Bold.woff') format('woff'),
+        url('Krub-Bold.ttf') format('truetype'),
+        url('Krub-Bold.svg#Krub-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
